@@ -1,0 +1,62 @@
+**Building Effective Agents**
+
+**Overview**
+Over the past year, our collaboration with numerous industries building large language model (LLM) agents has revealed that the most successful implementations often use simple, composable patterns rather than complex frameworks. This document distills our insights and offers practical advice for developing effective agents.
+
+**Understanding Agents**
+Agents vary in definition. Some see them as autonomous systems operating independently, while others envision them as prescriptive systems following predefined workflows. At Anthropic, we classify all variations as agentic systems, distinguishing between:
+- **Workflows**: Predetermined pathways where LLMs and tools are orchestrated.
+- **Agents**: Systems where LLMs dynamically control processes and tools.
+
+**When to Use Agents**
+Opt for the simplest application solution. Increase complexity only if necessary. Although agentic systems provide better task performance, they often come at the cost of latency and expenses. Workflows are suitable for well-defined tasks, while agents cater to flexible, decision-driven tasks at scale. In many cases, optimizing single LLM calls suffices.
+
+**Framework Recommendations**
+Frameworks ease the development of agentic systems. Options include:
+- LangGraph by LangChain;
+- Amazon Bedrock's AI Agent;
+- Rivet, a GUI LLM workflow builder; and
+- Vellum, a tool for building complex workflows.
+
+While these simplify tasks, they may obscure prompts and responses, complicating debugging. Start with direct LLM API usage and understand the underlying code.
+
+**Patterns in Agentic Systems**
+1. **Augmented LLM**: Enhance LLMs with retrieval, tools, and memory. Customize these to your use case and ensure a straightforward interface.
+
+2. **Prompt Chaining**: Decompose tasks into manageable steps, each building on the last. Ideal for routine tasks like generating marketing copy or writing documents.
+
+3. **Routing**: Classify and direct inputs to specialized tasks, improving performance for distinct categories, such as routing customer service queries.
+
+4. **Parallelization**: Divide tasks into sections or use voting for diverse outputs, useful in guardrails or evaluating LLM performance.
+
+5. **Orchestrator-Workers**: The central LLM delegates tasks to workers, suitable for unpredictable subtasks, like complex coding changes or multi-source searches.
+
+6. **Evaluator-Optimizer**: Iteratively refine responses based on clear criteria, akin to literary translation or in-depth content searches.
+
+**Developing Agents**
+Agents thrive as LLMs improve in reasoning, planning, and tool usage. Typically, agents start with a user command and independently plan execution. While they enhance task scalability, thorough testing and guardrails are crucial to mitigate errors and costs.
+
+**Combining Patterns**
+These building blocks are adaptable. Tailor and combine them to fit specific use cases, adding complexity only when it decidedly enhances outcomes.
+
+**Implementation Principles**
+1. Keep the design simple.
+2. Promote transparency by showing planning steps.
+3. Craft precise agent-computer interfaces with thorough documentation.
+
+While frameworks can assist, reducing abstraction layers is advisable as you progress to production. This approach ensures the creation of reliable, maintainable, and trustworthy agents.
+
+**Acknowledgements**
+Compiled by Erik Schluntz and Barry Zhang, drawing on experiences at Anthropic and insights from our customers.
+
+**Appendix 1: Agents in Practice**
+AI agents add substantial value in fields like:
+
+- **Customer Support**: Integrates tool assistance with chatbot interfaces, efficiently managing tasks from accessing data to executing programmatic actions.
+
+- **Coding Agents**: Offers autonomous problem-solving capabilities, able to verify solutions through tests and alter approaches based on iterative feedback.
+
+**Appendix 2: Prompt Engineering Tools**
+When constructing agentic systems, tools are integral. Provide precise specifications and examples for optimal model interaction. Ensure formats minimize complexity by leveraging naturally occurring text patterns. Prioritize clarity in tool descriptions and thoroughly test for errors. Investments in effective agent-computer interfaces mirror human-computer interface efforts.
+
+Through these insights and methods, developers can construct and refine effective LLM agents capable of meeting diverse and complex industry needs.

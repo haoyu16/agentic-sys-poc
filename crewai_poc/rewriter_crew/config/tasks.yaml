@@ -1,0 +1,9 @@
+rewrite_document:
+  description: >
+    Given the original document '{document}', rewrite the document to be succinct, well-structured, but still retains necessary details.
+
+    Please incorporate the following feedback if present: 
+    {feedback}
+  expected_output: >
+    A succinct and well-structured document which retains the key information and necessary details of the original document.
+  agent: doc_rewriter

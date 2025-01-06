@@ -1,0 +1,29 @@
+review_doc:
+  description: >
+    An original document and the rewritten document are given below. 
+    
+    Review the rewritten document whether it meets the following criteria:
+    - It retains the key information and necessary details and examples from the original document
+    - The key points are clearly listed with necessary details to support them.
+    - All the content in the rewritten document should come from the original document.
+
+    Additionally, if you believe there are any issues with the rewritten document 
+    or ways it could be improved, please provide feedback.
+
+    If any of the criteria are not met, the rewritten document is considered invalid.
+    Provide actionable changes about what is wrong and what actions
+    need to be taken to fix the document.
+    
+    Your final response must include:
+    - Valid: True/False
+    - Feedback: Provide commentary if the rewritten document fails any of the criteria.
+    
+    Original document:
+    {original_doc}
+    
+    Rewritten document to review: 
+    {rewritten_doc}
+  expected_output: >
+    Pass: True/False
+    Feedback: Commentary here if failed.
+  agent: doc_reviewer
